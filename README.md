@@ -14,12 +14,12 @@ npm install
 * **SECRET** คัย์ลับในการเข้ารหัส
 
 #### Endpoints
-> POST:localhost:<PORT>/auth/register
+> POST:localhost:PORT/auth/register
 
-> POST:localhost:<PORT>/auth/login
+> POST:localhost:PORT/auth/login
 
-> GET:localhost:<PORT>/users
+> GET:localhost:PORT/users
 
-> PATCH:localhost:<PORT>/users/<ID> body -> username
+> PATCH:localhost:PORT/users/ID body -> username
 
-> DELELTE:localhost:<PORT>/users/<ID>
+> DELELTE:localhost:PORT/users/ID
