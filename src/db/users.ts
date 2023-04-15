@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
     // select จะไม่แสดงตอน ดึงข้อมูล ให้ไปฝั่ง clients เพราะขอมูลนี้มีความ sentitives
     authentication: {
         password: { type: String, required: true, select: false },
-        salt: { type: String, required: true, select: false },
+        salt: { type: String, select: false },
         sessionToken: { type: String, select: false },
 
     }
@@ -20,9 +20,9 @@ export const getUserByEmail = (email: string) => UserModel.findOne({ email });
 export const getUserBySessionToken = (sessionToken: string) => UserModel.findOne({
     'authentication.sessionToken': sessionToken,
 });
-export const getUserById = (id: string) => UserModel.findById({ id });
+export const getUserById = (id: string) => UserModel.findById({ _id:id });
 export const createUser = (values: Record<string, any>) => new UserModel(values)
     .save().then((user) => user.toObject()); // return a JavaScript object 
-export const deleteUser = (id: string) => UserModel.findOneAndDelete({ _id:id });
-export const updateUser = (id:string,values: Record<string, any>) => UserModel.findByIdAndUpdate(id,values);
+export const deleteUserById = (id: string) => UserModel.findOneAndDelete({ _id: id });
+export const updateUser = async (id: string, values: Record<string, any>) => await UserModel.findByIdAndUpdate(id, values);
 
