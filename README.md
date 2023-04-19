@@ -38,8 +38,8 @@ npm install
 
 ### step
 
-1. ไหว้ครู
-2. config typescript
+1. ไหว้ครู 
+2. config typescript 
 3. config package.json
 4. config nodemon.json
 5. config .gitinore
