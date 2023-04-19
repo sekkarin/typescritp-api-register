@@ -23,3 +23,7 @@ npm install
 > PATCH:localhost:PORT/users/ID body -> username
 
 > DELELTE:localhost:PORT/users/ID
+
+### Create project
+* npm install
+

@@ -8,6 +8,7 @@ import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './router';
+import { log } from 'console';
 
 
 const app = express();
@@ -19,10 +20,7 @@ app.use(cors({
 app.use(cookieParser());
 app.use(cookieParser());
 app.use(bodyPaser.json())
-
-
-
-
+app.use(compression())
 
 const server = http.createServer(app);
 server.listen(process.env.PORT, () => {
@@ -31,8 +29,10 @@ server.listen(process.env.PORT, () => {
     console.log('====================================');
 });
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URL as string);
-mongoose.connection.on('error', (error: Error) => console.log(error));
+mongoose.connect(process.env.MONGODB_URL as string)
+    .then(result => {
+        log("db connected!")
+    })
+    .catch(err => log(err))
 
-
-app.use('/',router());
+app.use('/', router());

@@ -66,3 +66,14 @@ export const register = async (req: express.Request, res: express.Response, next
     }
 }
 
+export const logout = async (req: express.Request, res: express.Response,next:express.NextFunction) => {
+    try {
+        
+        res.clearCookie('TEST-AUTHENTICATION', { domain: 'localhost', path: '/' });
+        return res.status(200).json({message:"logged out!"});
+    } catch (error) {
+        console.log(error);
+        return res.sendStatus(400);
+
+    }
+}
