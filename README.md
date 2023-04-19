@@ -24,6 +24,8 @@ npm install
 
 > POST:localhost:PORT/auth/login
 
+> GET:localhost:PORT/auth/logout
+
 > GET:localhost:PORT/users
 
 > PATCH:localhost:PORT/users/ID body -> username
