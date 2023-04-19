@@ -43,7 +43,7 @@ npm install
 3. config package.json
 4. config nodemon.json
 5. config .gitinore
-6. setup db
+6. setup db and set env
 7. structure project
 8. defind Model Schema
 9. create method the model
