@@ -39,16 +39,18 @@ npm install
 ### step
 
 1. ไหว้ครู 
-2. config typescript 
-3. config package.json
-4. config nodemon.json
-5. config .gitinore
-6. setup db and set env
-7. structure project
-8. defind Model Schema
-9. create method the model
+2. config typescript ✅
+3. config package.json ✅
+4. config nodemon.json ✅
+5. config .gitinore ✅
+6. setup db and set env ✅
+7. structure project ✅
+8. defind Model Schema  ✅
+9. create method the model  ✅
+
 10. build authntication system
 11. build mange user system
+
 12. use middleware
 13. ...
 
