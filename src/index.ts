@@ -16,6 +16,7 @@ const app = express();
 app.use(cors({
     credentials:true
 }));
+
 app.use(cookieParser());
 app.use(bodyPaser.json());
 app.use(compression());
