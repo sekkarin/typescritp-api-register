@@ -25,3 +25,4 @@ export const createUser = (values: Record<string, any>) => new UserModel(values)
 export const deleteUserById = (id: string) => UserModel.findOneAndRemove({ _id: id });
 export const updateUser = async (id: string, values: Record<string, any>) => await UserModel
     .findByIdAndUpdate(id, values);
+    // npm start
