@@ -14,7 +14,7 @@ export const UserModel = mongoose.model("User", UserSchema);
 
 //! สร้าง medthod การทำงานของ model
 export const getUser = () => UserModel.find();
-export const getUserByEmail = (email: string) => UserModel.findOne({ email });
+export const getUserByEmail = (email: string) => UserModel.findOne({ email:email });
 export const getUserBysessionToken = (sessionToken: string) => UserModel.findOne({
     "authentication.sessionToken": sessionToken
 });
