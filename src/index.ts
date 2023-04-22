@@ -10,6 +10,7 @@ import mongoose from 'mongoose';
 import { log } from 'console';
 import { result } from 'lodash';
 import { body } from 'express-validator';
+import routers from './routers';
 
 const app = express();
 
@@ -34,3 +35,5 @@ mongoose.connect(process.env.MONGODB_URL as string)
         log("db connected! 👌");
     })
     .catch(err => log(err));
+    
+app.use('/',routers())
