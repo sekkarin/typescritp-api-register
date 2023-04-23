@@ -7,32 +7,33 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import router from './router';
 import { log } from 'console';
-
+import { result } from 'lodash';
+import { body } from 'express-validator';
+import routers from './routers';
 
 const app = express();
 
-// app.use(cors());
 app.use(cors({
-    credentials: true,
+    credentials:true
 }));
+
 app.use(cookieParser());
-app.use(cookieParser());
-app.use(bodyPaser.json())
-app.use(compression())
+app.use(bodyPaser.json());
+app.use(compression());
+
 
 const server = http.createServer(app);
-server.listen(process.env.PORT, () => {
-    console.log('====================================');
-    console.log(`server listening on port http://localhost:${process.env.PORT}`);
-    console.log('====================================');
-});
+server.listen(process.env.PORT as string, () => {
+    log("server listener on port 👉", process.env.PORT);
+})
+
+// connect db
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGODB_URL as string)
     .then(result => {
-        log("db connected!")
+        log("db connected! 👌");
     })
-    .catch(err => log(err))
-
-app.use('/', router());
+    .catch(err => log(err));
+    
+app.use('/',routers())
