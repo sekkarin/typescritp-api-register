@@ -48,8 +48,8 @@ npm install
 8. defind Model Schema  ✅
 9. create method the model  ✅
 
-10. build authntication system
-11. build mange user system
+10. build authntication system ✅
+11. build mange user system ✅
 
 12. use middleware
 13. ...

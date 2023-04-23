@@ -19,3 +19,4 @@ export const isAuthentication = async (req:express.Request,res:express.Response,
         res.sendStatus(400)
     }
 }
+
